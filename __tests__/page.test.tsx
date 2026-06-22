@@ -6,6 +6,7 @@ import Page from "@/app/page";
 test("renders the authority home page narrative and calls to action", () => {
   render(<Page />);
 
+  expect(screen.getByText("ENTREPRENEUR & ECOSYSTEM BUILDER")).toBeDefined();
   expect(
     screen.getByRole("heading", { level: 1, name: "Gary Giam" })
   ).toBeDefined();
@@ -16,7 +17,7 @@ test("renders the authority home page narrative and calls to action", () => {
   ).toBeDefined();
   expect(
     screen.getByText(
-      "Building businesses, communities and future opportunities across wellness, consulting, philanthropy, technology and future industries."
+      "Building an interconnected ecosystem spanning wellness, consulting, philanthropy, technology, and future industries — designed to create long-term value, impact, and innovation."
     )
   ).toBeDefined();
   expect(
@@ -26,10 +27,10 @@ test("renders the authority home page narrative and calls to action", () => {
   ).toBeDefined();
   expect(screen.getByAltText("Portrait of Gary Giam")).toBeDefined();
   expect(
-    screen.getByText(
+    screen.queryByText(
       "Recipient of International Prestige Brand Awards 2020 Entrepreneur of the Year."
     )
-  ).toBeDefined();
+  ).toBeNull();
   expect(
     screen.getByRole("link", { name: "Explore Companies" }).getAttribute("href")
   ).toBe("/companies");

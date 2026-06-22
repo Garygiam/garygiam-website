@@ -28,6 +28,9 @@ const journeyPreview = [
   "G-Space",
 ];
 const homeHeadline = "Entrepreneur | Venture Builder | Ecosystem Architect";
+const homeEyebrow = "ENTREPRENEUR & ECOSYSTEM BUILDER";
+const homeSupportingCopy =
+  "Building an interconnected ecosystem spanning wellness, consulting, philanthropy, technology, and future industries — designed to create long-term value, impact, and innovation.";
 const homeStatistics = [
   "Founded Food Ink in 2014",
   `${confirmedVentures} Ventures`,
@@ -42,7 +45,7 @@ export default function Home() {
         <section className="grid gap-8 rounded-[2rem] border border-black/10 bg-zinc-50 p-6 shadow-[0_24px_60px_rgba(17,17,17,0.06)] sm:p-10 lg:grid-cols-[minmax(0,1.1fr)_minmax(320px,0.8fr)] lg:items-center">
           <div>
             <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#9a7a17]">
-              {content.site.tagline}
+              {homeEyebrow}
             </p>
             <h1 className="mt-4 text-5xl font-semibold tracking-tight text-zinc-950 sm:text-6xl">
               {content.person.name}
@@ -51,11 +54,7 @@ export default function Home() {
               {homeHeadline}
             </p>
             <p className="mt-5 max-w-2xl text-base leading-7 text-zinc-600 sm:text-lg">
-              {content.person.heroCopy}
-            </p>
-            <p className="mt-4 text-sm font-medium text-zinc-700 sm:text-base">
-              Recipient of International Prestige Brand Awards 2020
-              Entrepreneur of the Year.
+              {homeSupportingCopy}
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
               <Link
