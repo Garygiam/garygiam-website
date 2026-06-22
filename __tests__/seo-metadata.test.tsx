@@ -1,3 +1,6 @@
+import { existsSync } from "node:fs";
+import path from "node:path";
+
 import { describe, expect, test } from "vitest";
 
 import {
@@ -52,6 +55,33 @@ describe("launch-page metadata", () => {
     );
     expect(metadata.metadataBase?.toString()).toBe("https://garygiam.com/");
     expect(metadata.alternates?.canonical).toBe("/");
+  });
+
+  test("declares founder favicon metadata and generated assets", () => {
+    const metadata = buildRootMetadata();
+    const icons = metadata.icons;
+
+    expect(icons).toEqual({
+      icon: [
+        { url: "/favicon.ico" },
+        { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+        { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
+      ],
+      apple: [
+        { url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
+      ],
+    });
+
+    expect(existsSync(path.join(process.cwd(), "app/favicon.ico"))).toBe(true);
+    expect(existsSync(path.join(process.cwd(), "public/favicon-32x32.png"))).toBe(
+      true
+    );
+    expect(existsSync(path.join(process.cwd(), "public/favicon-16x16.png"))).toBe(
+      true
+    );
+    expect(
+      existsSync(path.join(process.cwd(), "public/apple-touch-icon.png"))
+    ).toBe(true);
   });
 
   test("serializes JSON-LD for layout injection", () => {
