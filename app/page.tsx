@@ -1,5 +1,6 @@
 import Link from "next/link";
 
+import { TrackedLink } from "@/src/components/analytics/tracked-link";
 import { FounderPortrait } from "@/src/components/founder-portrait";
 import { SectionHeading } from "@/src/components/section-heading";
 import { Container } from "@/src/components/ui/container";
@@ -57,18 +58,22 @@ export default function Home() {
               {homeSupportingCopy}
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
-              <Link
+              <TrackedLink
                 href="/companies"
+                eventLabel="Explore Companies"
+                eventLocation="home_hero"
                 className="inline-flex w-fit items-center justify-center rounded-full bg-zinc-950 px-5 py-3 text-sm font-medium text-white"
               >
                 Explore Companies
-              </Link>
-              <Link
+              </TrackedLink>
+              <TrackedLink
                 href="/about"
+                eventLabel="About Gary"
+                eventLocation="home_hero"
                 className="inline-flex w-fit items-center justify-center rounded-full border border-black/10 bg-white px-5 py-3 text-sm font-medium text-zinc-950"
               >
                 About Gary
-              </Link>
+              </TrackedLink>
             </div>
           </div>
           <FounderPortrait
@@ -205,12 +210,14 @@ export default function Home() {
             developing ventures across wellness, consulting, philanthropy,
             technology, and future industries, the journey continues.
           </p>
-          <Link
+          <TrackedLink
             href="/about"
+            eventLabel="Explore the Full Journey"
+            eventLocation="home_journey"
             className="mt-5 inline-flex rounded-full border border-black/10 px-5 py-3 text-sm font-medium text-zinc-950"
           >
             Explore the Full Journey
-          </Link>
+          </TrackedLink>
         </section>
 
         <section className="mt-14 rounded-[1.75rem] border border-black/10 bg-white p-6 sm:p-8">
@@ -226,12 +233,14 @@ export default function Home() {
           />
           <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
             {contactEmail?.url ? (
-              <Link
+              <TrackedLink
                 href={contactEmail.url}
+                eventLabel="Contact Gary"
+                eventLocation="home_contact"
                 className="inline-flex w-fit items-center justify-center rounded-full bg-zinc-950 px-5 py-3 text-sm font-medium text-white"
               >
                 Contact Gary
-              </Link>
+              </TrackedLink>
             ) : null}
             <Link
               href="/contact"
