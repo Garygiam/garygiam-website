@@ -267,6 +267,20 @@ The following become approved public ecosystem entities across site:
 - `HMIOSS`
 - `G-Space`
 
+## Ecosystem Integrity Rule
+
+Future ventures added to `GaryGiam.com` should only be included if they clearly support the ecosystem mission of:
+
+- improving quality of life
+- helping people make better decisions
+- creating opportunities
+- developing communities
+- building future capability
+
+New ventures should strengthen the ecosystem narrative rather than dilute it.
+
+The ecosystem is mission-led, not acquisition-led.
+
 ### Entity Framing Rules
 
 - `Inkco` is a parent ecosystem entity
@@ -274,6 +288,7 @@ The following become approved public ecosystem entities across site:
 - `HMIOSS` is presented as a strategic leadership and education institution where Gary serves as Deputy President
 - entities may appear in structured content even if some are still building or pre-launch
 - statuses should preserve clarity around maturity and public availability
+- future entities should be admitted only if they reinforce the ecosystem mission and improve the coherence of the ecosystem story
 
 ## Companies / Ecosystem Page Direction
 
