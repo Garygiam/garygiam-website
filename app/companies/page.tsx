@@ -1,49 +1,45 @@
+import { EcosystemEntityCard } from "@/src/components/ecosystem/entity-card";
 import { PageIntro } from "@/src/components/page-intro";
 import { Container } from "@/src/components/ui/container";
 import { content } from "@/src/content";
-import Link from "next/link";
+import { getEcosystemChildren, getEcosystemLayers } from "@/src/lib/ecosystem";
 
 export default function CompaniesPage() {
+  const ecosystemLayers = getEcosystemLayers(content.ventures);
+
   return (
     <div className="pb-10 sm:pb-16">
-      <PageIntro eyebrow="Companies" title="What Gary Giam is building">
+      <PageIntro eyebrow="Ecosystem" title="The ecosystem Gary Giam is building">
         <p>
-          A founder portfolio spanning consulting, wellness, philanthropy,
-          technology, and future industries.
+          A mission-led ecosystem of businesses, institutions and initiatives
+          designed to improve quality of life, create opportunities, and
+          generate long-term impact.
         </p>
       </PageIntro>
 
       <Container>
-        <section className="grid gap-5 lg:grid-cols-2">
-          {content.ventures.map((venture) => (
-            <article
-              key={venture.id}
-              className="rounded-[1.75rem] border border-black/10 bg-white p-6 sm:p-7"
-            >
-              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#9a7a17]">
-                {venture.category}
-              </p>
-              <h2 className="mt-3 text-2xl font-semibold tracking-tight text-zinc-950">
-                {venture.name}
-              </h2>
-              <p className="mt-3 text-sm leading-7 text-zinc-600 sm:text-base">
-                {venture.summary}
-              </p>
-              <p className="mt-5 text-sm leading-7 text-zinc-700 sm:text-base">
-                {venture.vision}
-              </p>
-              {venture.websiteUrl ? (
-                <Link
-                  href={venture.websiteUrl}
-                  className="mt-6 inline-flex w-fit items-center justify-center rounded-full border border-black/10 px-4 py-2 text-sm font-medium text-zinc-950"
-                >
-                  Visit Website
-                </Link>
-              ) : null}
-              <p className="mt-6 text-xs font-medium uppercase tracking-[0.16em] text-zinc-500">
-                Founder portfolio
-              </p>
-            </article>
+        <section className="space-y-10">
+          {ecosystemLayers.map((layer) => (
+            <section key={layer.title}>
+              <div className="mb-5">
+                <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#9a7a17]">
+                  Strategic Layer
+                </p>
+                <h2 className="mt-2 text-3xl font-semibold tracking-tight text-zinc-950">
+                  {layer.title}
+                </h2>
+              </div>
+
+              <div className="grid gap-5 lg:grid-cols-2">
+                {layer.entities.map((entity) => (
+                  <EcosystemEntityCard
+                    key={entity.id}
+                    entity={entity}
+                    childrenEntities={getEcosystemChildren(content.ventures, entity.id)}
+                  />
+                ))}
+              </div>
+            </section>
           ))}
         </section>
       </Container>
