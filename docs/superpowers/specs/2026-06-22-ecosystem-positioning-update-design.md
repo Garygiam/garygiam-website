@@ -19,6 +19,14 @@ The key distinction is:
 - not "Gary owns several companies"
 - but "Gary is building an ecosystem designed to improve people’s lives from multiple angles"
 
+## North Star Statement
+
+Use this as the central strategic statement for the ecosystem narrative:
+
+`Gary Giam is building an ecosystem of businesses, institutions and initiatives that help people make better decisions, improve their lives and create opportunities for future generations.`
+
+`Each entity serves a different role, but all contribute toward a shared mission of creating meaningful and sustainable impact.`
+
 ## Scope
 
 This update includes:
@@ -77,11 +85,7 @@ It should quickly show that Gary is building one connected ecosystem across mult
 
 ### Supporting Copy
 
-Use the approved narrative direction:
-
-`Throughout my career, I realized that meaningful impact comes from helping people make better decisions, build stronger businesses, improve their wellbeing, support their communities and create opportunities for future generations.`
-
-`Each venture within the ecosystem serves a different purpose, but all are connected by the same mission: creating positive impact at scale.`
+The ecosystem section should be aligned to the North Star Statement and translate it into a concise homepage introduction rather than a long explanatory block.
 
 ### Visual Direction
 
@@ -106,6 +110,8 @@ Avoid:
 ### Shared Mission Block
 
 The shared mission should appear as a premium, centered statement that frames the ecosystem before the visitor reads the cards.
+
+It should use the approved North Star Statement as its primary narrative anchor.
 
 It should feel:
 
@@ -218,9 +224,9 @@ The section should communicate:
 
 `The goal was never simply to build companies.`
 
-`The goal is to build platforms, businesses and communities that help people make better decisions, improve their lives and create a better future.`
+`The goal is to build platforms, businesses, institutions and communities that help people make better decisions, improve their lives and create opportunities for future generations.`
 
-`Each venture solves a different challenge, but together they create a larger ecosystem of impact.`
+`Each entity serves a different role, but all contribute toward a shared mission of creating meaningful and sustainable impact.`
 
 This section should reveal meaning, not structure.
 
