@@ -1,15 +1,17 @@
 import Link from "next/link";
 
 import { TrackedLink } from "@/src/components/analytics/tracked-link";
+import { EcosystemEntityCard } from "@/src/components/ecosystem/entity-card";
 import { FounderPortrait } from "@/src/components/founder-portrait";
 import { SectionHeading } from "@/src/components/section-heading";
 import { Container } from "@/src/components/ui/container";
 import { content } from "@/src/content";
+import {
+  getEcosystemChildren,
+  getTopLevelEcosystemEntities,
+} from "@/src/lib/ecosystem";
 import { resolvePortraitSource } from "@/src/lib/portrait";
 
-const confirmedVentures = content.ventures.filter(
-  (venture) => venture.status === "confirmed"
-).length;
 const contactEmail = content.contactChannels.find(
   (channel) => channel.type === "email" && channel.url
 );
@@ -32,12 +34,17 @@ const homeHeadline = "Entrepreneur | Venture Builder | Ecosystem Architect";
 const homeEyebrow = "ENTREPRENEUR & ECOSYSTEM BUILDER";
 const homeSupportingCopy =
   "Building an interconnected ecosystem spanning wellness, consulting, philanthropy, technology, and future industries — designed to create long-term value, impact, and innovation.";
+const topLevelEcosystemEntities = getTopLevelEcosystemEntities(content.ventures);
 const homeStatistics = [
   "Founded Food Ink in 2014",
-  `${confirmedVentures} Ventures`,
+  `${topLevelEcosystemEntities.length} Ecosystem Entities`,
   `${content.awards.length} Verified Recognitions`,
   "10+ Years Building Businesses",
 ];
+const ecosystemCards = topLevelEcosystemEntities.map((entity) => ({
+  entity,
+  children: getEcosystemChildren(content.ventures, entity.id),
+}));
 
 export default function Home() {
   return (
@@ -102,61 +109,63 @@ export default function Home() {
         <section className="mt-14">
           <SectionHeading
             eyebrow="Ecosystem"
-            title="Building Across Industries"
+            title="Building Across Industries. Driven By One Mission."
             description={
-              <>
-                <p>
-                  From wellness and consulting to philanthropy, technology, and
-                  future industries, Gary Giam is building an interconnected
-                  ecosystem of ventures designed to create long-term value and
-                  impact.
-                </p>
-                <div className="mt-5 rounded-[1.5rem] border border-black/10 bg-zinc-50 p-5">
-                  <p className="text-sm font-semibold tracking-tight text-zinc-950">
-                    Building the Gary Giam Ecosystem
-                  </p>
-                  <p className="mt-2 text-sm leading-7 text-zinc-600 sm:text-base">
-                    A portfolio of ventures spanning wellness, consulting,
-                    philanthropy, technology, and future industries, united by a
-                    shared focus on growth, innovation, and long-term impact.
-                  </p>
-                </div>
-              </>
+              <p>
+                Each entity serves a different role, but all contribute toward a
+                shared mission of creating meaningful and sustainable impact.
+              </p>
             }
           />
+          <div className="mt-8 flex justify-center">
+            <div className="max-w-4xl rounded-[1.75rem] border border-[#d4af37]/40 bg-zinc-950 px-6 py-7 text-center text-white sm:px-8">
+              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#d4af37]">
+                Shared Mission
+              </p>
+              <p className="mt-4 text-base leading-8 text-zinc-100 sm:text-lg">
+                Gary Giam is building an ecosystem of businesses, institutions
+                and initiatives that help people make better decisions, improve
+                their lives and create opportunities for future generations.
+              </p>
+            </div>
+          </div>
           <div className="mt-8 grid gap-4 lg:grid-cols-2">
-            {content.ventures.map((venture) => (
-              <article
-                key={venture.id}
-                className="rounded-[1.75rem] border border-black/10 bg-white p-6"
-              >
-                <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#9a7a17]">
-                  {venture.category}
-                </p>
-                <h3 className="mt-3 text-2xl font-semibold tracking-tight text-zinc-950">
-                  {venture.name}
-                </h3>
-                <p className="mt-3 text-sm leading-6 text-zinc-600">
-                  {venture.summary}
-                </p>
-                <p className="mt-4 text-sm leading-6 text-zinc-700">
-                  {venture.vision}
-                </p>
-                {venture.websiteUrl ? (
-                  <Link
-                    href={venture.websiteUrl}
-                    className="mt-5 inline-flex rounded-full border border-black/10 px-4 py-2 text-sm font-medium text-zinc-950"
-                  >
-                    Visit Website
-                  </Link>
-                ) : null}
-              </article>
+            {ecosystemCards.map(({ entity, children }) => (
+              <EcosystemEntityCard
+                key={entity.id}
+                entity={entity}
+                childrenEntities={children}
+              />
             ))}
           </div>
         </section>
 
+        <section className="mt-14 rounded-[1.75rem] border border-black/10 bg-zinc-50 px-6 py-10 sm:px-10">
+          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#9a7a17]">
+            Why I Build
+          </p>
+          <h2 className="mt-3 text-3xl font-semibold tracking-tight text-zinc-950 sm:text-4xl">
+            Why I Build
+          </h2>
+          <p className="mt-3 text-sm font-medium uppercase tracking-[0.18em] text-zinc-500">
+            A mission behind the ecosystem
+          </p>
+          <div className="mt-6 max-w-4xl space-y-5 text-base leading-8 text-zinc-700 sm:text-lg">
+            <p>The goal was never simply to build companies.</p>
+            <p>
+              The goal is to build platforms, businesses, institutions and
+              communities that help people make better decisions, improve their
+              lives and create opportunities for future generations.
+            </p>
+            <p>
+              Each entity serves a different role, but all contribute toward a
+              shared mission of creating meaningful and sustainable impact.
+            </p>
+          </div>
+        </section>
+
         <section className="mt-14">
-          <SectionHeading eyebrow="Recognition" title="Verified recognition" />
+          <SectionHeading eyebrow="Proof" title="Recognition & Impact" />
           <div className="mt-6 grid gap-4 lg:grid-cols-2">
             {content.awards.map((award) => (
               <article
@@ -181,18 +190,6 @@ export default function Home() {
           >
             View All Recognition
           </Link>
-        </section>
-
-        <section className="mt-14 rounded-[1.75rem] border border-black/10 bg-zinc-950 px-6 py-8 text-white sm:px-8">
-          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#d4af37]">
-            Founder Philosophy
-          </p>
-          <h2 className="mt-3 text-3xl font-semibold tracking-tight">
-            {content.person.philosophyTitle}
-          </h2>
-          <p className="mt-4 max-w-3xl text-base leading-7 text-zinc-200">
-            {content.person.philosophyText}
-          </p>
         </section>
 
         <section className="mt-14">
@@ -253,7 +250,7 @@ export default function Home() {
             <article className="rounded-3xl border border-black/10 bg-zinc-50 p-5">
               <p className="text-sm font-medium text-zinc-500">Ventures</p>
               <p className="mt-2 text-2xl font-semibold tracking-tight text-zinc-950">
-                {confirmedVentures} ecosystem ventures
+                {topLevelEcosystemEntities.length} ecosystem entities
               </p>
             </article>
             <article className="rounded-3xl border border-black/10 bg-zinc-50 p-5">

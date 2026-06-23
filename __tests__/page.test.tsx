@@ -3,7 +3,7 @@ import { expect, test } from "vitest";
 
 import Page from "@/app/page";
 
-test("renders the authority home page narrative and calls to action", () => {
+test("renders the ecosystem-led homepage story and proof section", () => {
   render(<Page />);
 
   expect(screen.getByText("ENTREPRENEUR & ECOSYSTEM BUILDER")).toBeDefined();
@@ -20,11 +20,7 @@ test("renders the authority home page narrative and calls to action", () => {
       "Building an interconnected ecosystem spanning wellness, consulting, philanthropy, technology, and future industries — designed to create long-term value, impact, and innovation."
     )
   ).toBeDefined();
-  expect(
-    screen.getByText(
-      "A portfolio of ventures spanning wellness, consulting, philanthropy, technology, and future industries, united by a shared focus on growth, innovation, and long-term impact."
-    )
-  ).toBeDefined();
+  expect(screen.getByText("7 Ecosystem Entities")).toBeDefined();
   expect(screen.getByAltText("Portrait of Gary Giam")).toBeDefined();
   expect(
     screen.queryByText(
@@ -38,39 +34,33 @@ test("renders the authority home page narrative and calls to action", () => {
     screen.getByRole("link", { name: "About Gary" }).getAttribute("href")
   ).toBe("/about");
   expect(
-    screen.getByRole("heading", { level: 2, name: "Building Across Industries" })
+    screen.getByRole("heading", {
+      level: 2,
+      name: "Building Across Industries. Driven By One Mission.",
+    })
+  ).toBeDefined();
+  expect(
+    screen.getByText(
+      "Gary Giam is building an ecosystem of businesses, institutions and initiatives that help people make better decisions, improve their lives and create opportunities for future generations."
+    )
+  ).toBeDefined();
+  expect(screen.getByText("Better Everyday Decisions")).toBeDefined();
+  expect(screen.getAllByText("Inkco").length).toBeGreaterThan(0);
+  expect(screen.getAllByText("Food Ink").length).toBeGreaterThan(0);
+  expect(screen.getByText("HMIOSS")).toBeDefined();
+  expect(screen.getByText("Future Innovation")).toBeDefined();
+  expect(
+    screen.getByRole("heading", { level: 2, name: "Why I Build" })
+  ).toBeDefined();
+  expect(
+    screen.getByText("The goal was never simply to build companies.")
   ).toBeDefined();
   expect(
     screen.getByRole("heading", {
       level: 2,
-      name: "Verified recognition",
+      name: "Recognition & Impact",
     })
   ).toBeDefined();
-  expect(screen.getByText("Entrepreneur of the Year")).toBeDefined();
-  expect(screen.getByText("Malaysia Website Awards 2016")).toBeDefined();
-  expect(screen.getByText("Site of The Month (January)")).toBeDefined();
-  expect(
-    screen
-      .getByRole("link", { name: "View All Recognition" })
-      .getAttribute("href")
-  ).toBe("/media");
-  expect(screen.getByText("Founded Food Ink in 2014")).toBeDefined();
-  expect(screen.getByText("6 Ventures")).toBeDefined();
-  expect(screen.getByText("2 Verified Recognitions")).toBeDefined();
-  expect(screen.getByText("10+ Years Building Businesses")).toBeDefined();
-  expect(screen.getByText("Small Knife Cut Big Tree")).toBeDefined();
-  expect(screen.getByText("PropertyGuru Malaysia")).toBeDefined();
-  expect(screen.getByText("Food Ink")).toBeDefined();
-  expect(screen.getAllByText("Isaac G Consultancy").length).toBeGreaterThan(0);
-  expect(screen.getAllByText("Belleco Skin Beaute").length).toBeGreaterThan(0);
-  expect(screen.getAllByText("Yayasan TXJ Malaysia").length).toBeGreaterThan(0);
-  expect(screen.getAllByText("Inkco").length).toBeGreaterThan(0);
-  const propertyGuruPreview = screen.getByText("PropertyGuru Malaysia");
-  const foodInkPreview = screen.getByText("Food Ink");
-  expect(
-    propertyGuruPreview.compareDocumentPosition(foodInkPreview) &
-      Node.DOCUMENT_POSITION_FOLLOWING
-  ).toBeTruthy();
   expect(
     screen
       .getByRole("link", { name: "Explore the Full Journey" })
