@@ -47,22 +47,43 @@ describe("MVP content contract", () => {
     expect(content.person.portraitPath).toBe("/images/gary-giam-portrait.jpg");
     expect(content.person.philosophyTitle).toBe("Small Knife Cut Big Tree");
 
-    expect(content.ventures).toHaveLength(6);
+    expect(content.ventures).toHaveLength(12);
     expect(content.ventures.map((venture) => venture.name)).toEqual([
-      "Isaac G Consultancy",
       "Belleco Skin Beaute",
       "Celestial Yuan",
-      "Yayasan TXJ Malaysia",
       "Inkco",
+      "Food Ink",
+      "Beauty Ink",
+      "Drive Ink",
+      "Stay Ink",
+      "Travel Ink",
+      "Isaac G Consultancy",
+      "Yayasan TXJ Malaysia",
+      "HMIOSS",
       "G-Space",
     ]);
 
-    expect(content.ventures[0]).toMatchObject({
-      id: expect.any(String),
-      slug: expect.any(String),
-      name: expect.any(String),
-      category: expect.any(String),
-      vision: expect.any(String),
+    expect(content.ventures.find((venture) => venture.name === "Inkco")).toMatchObject({
+      kind: "ecosystem",
+      ecosystemLayer: "Decision Platforms",
+      impactPillar: "Better Everyday Decisions",
+      status: "Building",
+    });
+
+    expect(content.ventures.find((venture) => venture.name === "Food Ink")).toMatchObject({
+      parentId: "inkco",
+      kind: "pillar",
+      ecosystemLayer: "Decision Platforms",
+      impactPillar: "Better Everyday Decisions",
+    });
+
+    expect(content.ventures.find((venture) => venture.name === "HMIOSS")).toMatchObject({
+      kind: "institution",
+      ecosystemLayer: "Leadership Development",
+      impactPillar: "Future Leaders",
+      summary: "Strategic leadership and education institution.",
+      vision: expect.stringContaining("Deputy President"),
+      status: "Strategic Initiative",
     });
 
     expect(content.careerMilestones).toHaveLength(9);
@@ -94,9 +115,10 @@ describe("MVP content contract", () => {
       title: "Site of The Month (January)",
       sourceUrl: "https://www.exabytes.my/blog/malaysia-website-awards-2016/",
     });
-    expect(content.ventures[5]).toMatchObject({
-      name: "G-Space",
-      category: "Space & Future Industries",
+    expect(content.ventures.find((venture) => venture.name === "G-Space")).toMatchObject({
+      ecosystemLayer: "Future Innovation",
+      impactPillar: "Future Innovation",
+      status: "Future Initiative",
     });
 
     expect(content.mediaItems[0]).toMatchObject({
