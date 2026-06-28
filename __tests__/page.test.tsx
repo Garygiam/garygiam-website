@@ -3,70 +3,82 @@ import { expect, test } from "vitest";
 
 import Page from "@/app/page";
 
-test("renders the ecosystem-led homepage story and proof section", () => {
+test("renders the PB13 homepage as the public headquarters of GEH", () => {
   render(<Page />);
 
-  expect(screen.getByText("ENTREPRENEUR & ECOSYSTEM BUILDER")).toBeDefined();
+  expect(screen.getByRole("heading", { level: 1, name: "Gary Giam" })).toBeDefined();
+  expect(screen.getByText("GEH HEADQUARTERS")).toBeDefined();
   expect(
-    screen.getByRole("heading", { level: 1, name: "Gary Giam" })
+    screen.getByText("Architect of an entrepreneurial operating system")
   ).toBeDefined();
-  expect(
-    screen.getByText(
-      "Entrepreneur | Venture Builder | Ecosystem Architect"
-    )
-  ).toBeDefined();
-  expect(
-    screen.getByText(
-      "Building an interconnected ecosystem spanning wellness, consulting, philanthropy, technology, and future industries — designed to create long-term value, impact, and innovation."
-    )
-  ).toBeDefined();
-  expect(screen.getByText("7 Ecosystem Entities")).toBeDefined();
-  expect(screen.getByAltText("Portrait of Gary Giam")).toBeDefined();
-  expect(
-    screen.queryByText(
-      "Recipient of International Prestige Brand Awards 2020 Entrepreneur of the Year."
-    )
-  ).toBeNull();
-  expect(
-    screen.getByRole("link", { name: "Explore Companies" }).getAttribute("href")
-  ).toBe("/companies");
-  expect(
-    screen.getByRole("link", { name: "About Gary" }).getAttribute("href")
-  ).toBe("/about");
+
   expect(
     screen.getByRole("heading", {
+      level: 2,
+      name: "Most ventures can solve a problem once. Far fewer become stronger every time they do.",
+    })
+  ).toBeDefined();
+  expect(
+    screen.getByText(
+      "GEH exists to solve a recurring organizational problem: promising ventures often build momentum without building the systems, coherence, and strength required to compound over time."
+    )
+  ).toBeDefined();
+
+  expect(
+    screen.getByRole("heading", {
+      level: 2,
+      name: "GEH is an entrepreneurial operating system.",
+    })
+  ).toBeDefined();
+  expect(
+    screen.getByText(
+      "It is the category for a repeatable system designed to help organizations become stronger, more coherent, and more capable every time they solve a meaningful problem."
+    )
+  ).toBeDefined();
+
+  expect(
+    screen.getByRole("heading", {
+      level: 2,
+      name: "How GEH works differently",
+    })
+  ).toBeDefined();
+  expect(
+    screen.getByText(
+      "GEH is an entrepreneurial operating system: a repeatable system for building organizations that become stronger, more coherent, and more capable each time they solve a meaningful problem, rather than remaining isolated ventures dependent on one-off founder effort."
+    )
+  ).toBeDefined();
+
+  expect(
+    screen.getByRole("heading", {
+      level: 2,
+      name: "The ventures exist to validate the system",
+    })
+  ).toBeDefined();
+  expect(screen.getAllByText("Inkco").length).toBeGreaterThan(0);
+  expect(screen.getByText("HMIOSS")).toBeDefined();
+  expect(screen.getByText("The Star")).toBeDefined();
+
+  expect(
+    screen.getByRole("heading", {
+      level: 2,
+      name: "Why GEH matters now",
+    })
+  ).toBeDefined();
+  expect(
+    screen.getByRole("link", { name: "Explore the GEH Ecosystem" }).getAttribute("href")
+  ).toBe("/companies");
+  expect(
+    screen.getByRole("link", { name: "View Proof & Authority" }).getAttribute("href")
+  ).toBe("/media");
+  expect(
+    screen.getByRole("link", { name: "Partner with GEH" }).getAttribute("href")
+  ).toBe("/contact");
+
+  expect(
+    screen.queryByRole("heading", {
       level: 2,
       name: "Building Across Industries. Driven By One Mission.",
     })
-  ).toBeDefined();
-  expect(
-    screen.getByText(
-      "Gary Giam is building an ecosystem of businesses, institutions and initiatives that help people make better decisions, improve their lives and create opportunities for future generations."
-    )
-  ).toBeDefined();
-  expect(screen.getByText("Better Everyday Decisions")).toBeDefined();
-  expect(screen.getAllByText("Inkco").length).toBeGreaterThan(0);
-  expect(screen.getAllByText("Food Ink").length).toBeGreaterThan(0);
-  expect(screen.getByText("HMIOSS")).toBeDefined();
-  expect(screen.getByText("Future Innovation")).toBeDefined();
-  expect(
-    screen.getByRole("heading", { level: 2, name: "Why I Build" })
-  ).toBeDefined();
-  expect(
-    screen.getByText("The goal was never simply to build companies.")
-  ).toBeDefined();
-  expect(
-    screen.getByRole("heading", {
-      level: 2,
-      name: "Recognition & Impact",
-    })
-  ).toBeDefined();
-  expect(
-    screen
-      .getByRole("link", { name: "Explore the Full Journey" })
-      .getAttribute("href")
-  ).toBe("/about");
-  expect(
-    screen.getByRole("link", { name: "Contact Gary" }).getAttribute("href")
-  ).toBe("mailto:hello@garygiam.com");
+  ).toBeNull();
+  expect(screen.queryByRole("heading", { level: 2, name: "Why I Build" })).toBeNull();
 });
