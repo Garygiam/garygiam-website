@@ -338,6 +338,5 @@ export const content: ContentModel = {
     description:
       "Official digital headquarters for Gary Giam, connecting confirmed ventures, recognition, impact, and contact channels.",
     canonicalUrl: "https://garygiam.com",
-    openGraphImage: "https://garygiam.com/og-image.jpg",
   },
 };
