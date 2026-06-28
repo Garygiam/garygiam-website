@@ -86,7 +86,7 @@ export const homepageNarrative = {
         "Proves that leadership development becomes stronger when education, strategy, and community are organized institutionally.",
       "g-space":
         "Proves that future capability can be cultivated intentionally before markets fully mature.",
-    } satisfies Record<string, string>,
+    } as Record<string, string>,
     authorityTitle: "What the public proof shows",
     authorityDescription:
       "Recognition, media coverage, and verified milestones matter here because they show organizational strengthening in public, not just private theory.",
