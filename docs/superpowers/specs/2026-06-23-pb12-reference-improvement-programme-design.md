@@ -153,6 +153,32 @@ Typical signals include:
 - more inheritable implementation discipline
 - clearer separation between local content and reusable reference patterns
 
+## Reference Value Statement
+
+Every `Reference Quality` implementation item must explicitly record:
+
+- `Problem`
+- `Reference Value`
+- `Supporting Evidence`
+- `Promotion Candidate` (`Local` / `Factory` / `GEH Core`)
+- `Success Metric`
+
+This requirement exists because PB12 is no longer just improving `GaryGiam.com`.
+
+It is improving the benchmark that future `GEH Instances` may inherit.
+
+### Reference Test
+
+PB12 must apply the following test throughout backloging, classification, and implementation planning:
+
+If a new GEH Instance were installed tomorrow, would we want it to inherit this improvement by default?
+
+Interpretation:
+
+- if yes, it belongs in `Reference Quality` or is at least a `Factory Candidate`
+- if no, it remains a `Local Improvement`
+- if the evidence is promising but not yet mature enough for inheritance, it should remain a candidate rather than being over-promoted
+
 ## Factory Candidate Qualification Standard
 
 An item should be treated as a `Factory Candidate` only when repository evidence suggests:
