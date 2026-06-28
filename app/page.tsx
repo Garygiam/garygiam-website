@@ -140,106 +140,93 @@ export default function Home() {
         </section>
 
         <section className="mt-14">
-          <SectionHeading eyebrow="Proof" title="Recognition & Impact" />
-          <div className="mt-6 grid gap-4 lg:grid-cols-2">
-            {content.awards.map((award) => (
-              <article
-                key={award.id}
-                className="rounded-[1.75rem] border border-black/10 bg-white p-6 sm:p-8"
-              >
-                <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#9a7a17]">
-                  Recognition
-                </p>
-                <h3 className="mt-3 text-2xl font-semibold tracking-tight text-zinc-950">
-                  {award.issuer} {award.date}
-                </h3>
-                <p className="mt-3 text-lg font-medium text-zinc-950">
-                  {award.title}
-                </p>
-              </article>
+          <SectionHeading
+            eyebrow={homepageNarrative.proof.eyebrow}
+            title={homepageNarrative.proof.title}
+            description={<p>{homepageNarrative.proof.description}</p>}
+          />
+          <div className="mt-8 grid gap-4 lg:grid-cols-2">
+            {ecosystemCards.map(({ entity, children }) => (
+              <EcosystemEntityCard
+                key={entity.id}
+                entity={entity}
+                childrenEntities={children}
+              />
             ))}
           </div>
-          <Link
-            href="/media"
-            className="mt-6 inline-flex rounded-full border border-black/10 px-5 py-3 text-sm font-medium text-zinc-950"
-          >
-            View All Recognition
-          </Link>
-        </section>
-
-        <section className="mt-14">
-          <SectionHeading eyebrow="Founder Journey" title="The journey behind the ecosystem" />
-          <div className="mt-6 space-y-4 border-l border-black/10 pl-5">
-            {journeyPreview.map((milestone) => (
-              <div key={milestone} className="relative">
-                <span className="absolute -left-[1.65rem] top-2 h-3 w-3 rounded-full bg-[#d4af37]" />
-                <p className="text-lg font-medium text-zinc-950">{milestone}</p>
-              </div>
-            ))}
-          </div>
-          <p className="mt-6 max-w-3xl text-base leading-7 text-zinc-600">
-            From building digital platforms, brands, and businesses to
-            developing ventures across wellness, consulting, philanthropy,
-            technology, and future industries, the journey continues.
-          </p>
-          <TrackedLink
-            href="/about"
-            eventLabel="Explore the Full Journey"
-            eventLocation="home_journey"
-            className="mt-5 inline-flex rounded-full border border-black/10 px-5 py-3 text-sm font-medium text-zinc-950"
-          >
-            Explore the Full Journey
-          </TrackedLink>
         </section>
 
         <section className="mt-14 rounded-[1.75rem] border border-black/10 bg-white p-6 sm:p-8">
           <SectionHeading
-            eyebrow="Contact"
-            title="Connect with Gary Giam"
-            description={
-              <p>
-                Direct contact paths are available for partnerships,
-                collaboration, and founder conversations.
-              </p>
-            }
+            eyebrow="Authority"
+            title={homepageNarrative.proof.authorityTitle}
+            description={<p>{homepageNarrative.proof.authorityDescription}</p>}
           />
-          <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
-            {contactEmail?.url ? (
-              <TrackedLink
-                href={contactEmail.url}
-                eventLabel="Contact Gary"
-                eventLocation="home_contact"
-                className="inline-flex w-fit items-center justify-center rounded-full bg-zinc-950 px-5 py-3 text-sm font-medium text-white"
-              >
-                Contact Gary
-              </TrackedLink>
+          <div className="mt-6 grid gap-4 lg:grid-cols-[minmax(0,1.2fr)_minmax(0,0.8fr)]">
+            <div className="rounded-[1.5rem] border border-black/10 bg-zinc-50 p-5">
+              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#9a7a17]">
+                Recognition
+              </p>
+              <div className="mt-4 space-y-4">
+                {content.awards.map((award) => (
+                  <article key={award.id}>
+                    <h3 className="text-lg font-semibold text-zinc-950">
+                      {award.issuer} {award.date}
+                    </h3>
+                    <p className="mt-2 text-sm leading-7 text-zinc-700">{award.title}</p>
+                  </article>
+                ))}
+              </div>
+            </div>
+
+            {featuredMediaCoverage ? (
+              <div className="rounded-[1.5rem] border border-black/10 bg-zinc-950 p-5 text-white">
+                <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#d4af37]">
+                  Media Coverage
+                </p>
+                <h3 className="mt-4 text-2xl font-semibold tracking-tight">
+                  {featuredMediaCoverage.outlet}
+                </h3>
+                <p className="mt-3 text-base font-medium text-white">
+                  {featuredMediaCoverage.title}
+                </p>
+                <p className="mt-4 text-sm leading-7 text-zinc-200">
+                  {featuredMediaCoverage.context}
+                </p>
+                <Link
+                  href={featuredMediaCoverage.sourceUrl}
+                  className="mt-6 inline-flex rounded-full border border-white/15 px-4 py-2 text-sm font-medium text-white"
+                >
+                  View source
+                </Link>
+              </div>
             ) : null}
-            <Link
-              href="/contact"
-              className="inline-flex w-fit items-center justify-center rounded-full border border-black/10 px-5 py-3 text-sm font-medium text-zinc-950"
-            >
-              View Contact Options
-            </Link>
           </div>
-          <div className="mt-8 grid gap-4 sm:grid-cols-3">
-            <article className="rounded-3xl border border-black/10 bg-zinc-50 p-5">
-              <p className="text-sm font-medium text-zinc-500">Ventures</p>
-              <p className="mt-2 text-2xl font-semibold tracking-tight text-zinc-950">
-                {topLevelEcosystemEntities.length} ecosystem entities
-              </p>
-            </article>
-            <article className="rounded-3xl border border-black/10 bg-zinc-50 p-5">
-              <p className="text-sm font-medium text-zinc-500">Recognition</p>
-              <p className="mt-2 text-2xl font-semibold tracking-tight text-zinc-950">
-                {content.awards.length} trust signal
-              </p>
-            </article>
-            <article className="rounded-3xl border border-black/10 bg-zinc-50 p-5">
-              <p className="text-sm font-medium text-zinc-500">Access</p>
-              <p className="mt-2 text-2xl font-semibold tracking-tight text-zinc-950">
-                {content.contactChannels.length} contact paths
-              </p>
-            </article>
+        </section>
+
+        <section className="mt-14 rounded-[1.75rem] border border-black/10 bg-zinc-50 px-6 py-10 sm:px-10">
+          <SectionHeading
+            eyebrow={homepageNarrative.future.eyebrow}
+            title={homepageNarrative.future.title}
+            description={<p>{homepageNarrative.future.description}</p>}
+          />
+          <div className="mt-8 rounded-[1.5rem] border border-black/10 bg-white p-6">
+            <p className="text-sm font-medium uppercase tracking-[0.18em] text-zinc-500">
+              {homepageNarrative.future.actionTitle}
+            </p>
+            <div className="mt-5 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+              {homepageNarrative.future.actions.map((action) => (
+                <TrackedLink
+                  key={action.label}
+                  href={action.href}
+                  eventLabel={action.eventLabel}
+                  eventLocation={action.eventLocation}
+                  className="inline-flex w-fit items-center justify-center rounded-full border border-black/10 bg-white px-5 py-3 text-sm font-medium text-zinc-950"
+                >
+                  {action.label}
+                </TrackedLink>
+              ))}
+            </div>
           </div>
         </section>
       </Container>

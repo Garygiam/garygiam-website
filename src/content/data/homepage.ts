@@ -72,15 +72,15 @@ export const homepageNarrative = {
     actionTitle: "What to do next",
     actions: [
       {
-        label: "Explore the GEH Ecosystem",
+        label: "Understand the GEH Ecosystem",
         href: "/companies",
-        eventLabel: "Explore the GEH Ecosystem",
+        eventLabel: "Understand the GEH Ecosystem",
         eventLocation: "home_future",
       },
       {
-        label: "View Proof & Authority",
+        label: "Review GEH Proof & Authority",
         href: "/media",
-        eventLabel: "View Proof & Authority",
+        eventLabel: "Review GEH Proof & Authority",
         eventLocation: "home_future",
       },
       {
