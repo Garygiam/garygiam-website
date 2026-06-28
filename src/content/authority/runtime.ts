@@ -29,7 +29,7 @@ const FEATURED_AUTHORITY_AWARD_DETAILS: Record<
 };
 
 export function getFeaturedAuthorityAwards(): Award[] {
-  const order = new Map(
+  const order = new Map<string, number>(
     FEATURED_AUTHORITY_AWARD_IDS.map((id, index) => [id, index])
   );
 
