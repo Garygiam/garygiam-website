@@ -16,24 +16,10 @@ import {
 } from "@/src/lib/ecosystem";
 import { resolvePortraitSource } from "@/src/lib/portrait";
 
-const contactEmail = content.contactChannels.find(
-  (channel) => channel.type === "email" && channel.url
-);
 const portraitSrc = content.person.portraitPath
   ? resolvePortraitSource(content.person.portraitPath)
   : null;
 const portraitAvailable = Boolean(portraitSrc);
-const journeyPreview = [
-  "PropertyGuru Malaysia",
-  "Food Ink",
-  "Isaac G Consultancy",
-  "Ratatouille Gourmet",
-  "Belleco Skin Beaute",
-  "Celestial Yuan",
-  "Yayasan TXJ Malaysia",
-  "Inkco",
-  "G-Space",
-];
 const topLevelEcosystemEntities = getTopLevelEcosystemEntities(content.ventures);
 const ecosystemCards = topLevelEcosystemEntities.map((entity) => ({
   entity,
