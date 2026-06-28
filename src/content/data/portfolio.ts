@@ -1,3 +1,4 @@
+import { getFeaturedAuthorityAwards } from "../authority/runtime";
 import type { ContentModel } from "../types";
 
 export const content: ContentModel = {
@@ -271,36 +272,7 @@ export const content: ContentModel = {
       organization: "G-Space",
     },
   ],
-  awards: [
-    {
-      id: "international-prestige-brand-awards-2020",
-      title: "Entrepreneur of the Year",
-      issuer: "International Prestige Brand Awards",
-      date: "2020",
-      summary: "Approved recognition tied to the MVP launch inputs.",
-      sourceUrl: "https://www.tclmagazine.com/ipba2020-entrepreneur-gary-giam-2/",
-      sourceLabel: "TCL Magazine",
-      assetLabels: [
-        "International Prestige Brand Awards 2020 photos",
-        "Founder recognition imagery",
-      ],
-    },
-    {
-      id: "malaysia-website-awards-2016",
-      title: "Site of The Month (January)",
-      issuer: "Malaysia Website Awards",
-      date: "2016",
-      summary:
-        "Recognition listing for Gary Giam // Food Ink // foodink.com.my, reinforcing the early digital platform-building chapter behind the broader ecosystem story.",
-      sourceUrl: "https://www.exabytes.my/blog/malaysia-website-awards-2016/",
-      sourceLabel: "Exabytes Malaysia",
-      assetLabels: [
-        "Malaysia Website Awards 2016 certificate",
-        "Malaysia Website Awards event photos",
-        "Event presentation photos",
-      ],
-    },
-  ],
+  awards: getFeaturedAuthorityAwards(),
   mediaItems: [
     {
       id: "entrepreneur-of-the-year-recognition",
