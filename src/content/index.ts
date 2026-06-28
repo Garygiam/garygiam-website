@@ -3,6 +3,7 @@ export {
   AUTHORITY_VAULT_CATEGORIES,
   authorityAwards,
   authorityFounderHighlights,
+  getHomepageProofSignals,
   authorityMediaCoverage,
   authorityVentureMilestones,
 } from "./authority";
@@ -12,6 +13,7 @@ export type {
   AuthorityMediaCoverage,
   AuthorityVaultCategory,
   FounderHighlight,
+  HomepageProofSignal,
   VentureMilestone,
 } from "./authority";
 export type { Site } from "./types/site";

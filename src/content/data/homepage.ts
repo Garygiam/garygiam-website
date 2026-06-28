@@ -5,7 +5,15 @@ export const homepageNarrative = {
     lead:
       "Most ventures can solve a problem once. Far fewer become stronger every time they do.",
     supporting:
-      "GEH exists to solve a recurring organizational problem: promising ventures often build momentum without building the systems, coherence, and strength required to compound over time.",
+      "Organizations often gain momentum faster than they gain strength. Growth creates complexity, dependence, and fragility faster than most systems are built to absorb it.",
+    failureTitle: "Why current approaches keep falling short",
+    failureLead:
+      "Most company-building approaches optimize for launch, growth, or visibility. Far fewer are designed to make the organization itself stronger each time it solves a meaningful problem.",
+    realitySignals: [
+      "Traction often grows faster than capability.",
+      "Founders remain the operating system for too long.",
+      "Solving one problem rarely makes the organization stronger at solving the next.",
+    ],
     primaryCta: {
       label: "Explore the GEH Ecosystem",
       href: "/companies",
@@ -22,8 +30,10 @@ export const homepageNarrative = {
   category: {
     eyebrow: "The Category",
     title: "GEH is an entrepreneurial operating system.",
+    necessity:
+      "If the real problem is organizational fragility, another founder profile, company list, or consulting label is not enough. A new category is required.",
     description:
-      "It is the category for a repeatable system designed to help organizations become stronger, more coherent, and more capable every time they solve a meaningful problem.",
+      "GEH is that category: a repeatable system designed to help organizations become stronger, more coherent, and more capable every time they solve a meaningful problem.",
     mentalModel: [
       "Gary is not just building companies.",
       "Gary is building a system that continuously creates stronger organizations.",
@@ -57,12 +67,29 @@ export const homepageNarrative = {
   },
   proof: {
     eyebrow: "The Proof",
-    title: "The ventures exist to validate the system",
+    title: "What the ventures prove about GEH",
     description:
-      "Each entity expresses GEH in a different context, but all of them test the same question: can a stronger operating system create a stronger organization?",
-    authorityTitle: "Why the proof matters",
+      "The ventures matter because each one tests whether a stronger operating system can create stronger capability, clearer decisions, and more durable outcomes in a different context.",
+    organizationalStrengtheningLabel: "What this proves",
+    organizationProofByVentureId: {
+      "belleco-skin-beaute":
+        "Proves that trust, consistency, and repeatable service delivery can strengthen personal-wellbeing outcomes.",
+      "celestial-yuan":
+        "Proves that clearer guidance can be modernized into a more coherent and accessible operating model.",
+      inkco:
+        "Proves that better decisions can be systemized across everyday categories instead of solved as isolated products.",
+      "isaac-g-consultancy":
+        "Proves that stronger positioning and sharper systems improve business capability, not just campaign output.",
+      "yayasan-txj-malaysia":
+        "Proves that community impact grows stronger when initiatives are organized through sustained support systems.",
+      hmioss:
+        "Proves that leadership development becomes stronger when education, strategy, and community are organized institutionally.",
+      "g-space":
+        "Proves that future capability can be cultivated intentionally before markets fully mature.",
+    } satisfies Record<string, string>,
+    authorityTitle: "What the public proof shows",
     authorityDescription:
-      "Recognition, media coverage, and founder milestones matter here because they help show that the system is producing visible outcomes rather than remaining a private theory.",
+      "Recognition, media coverage, and verified milestones matter here because they show organizational strengthening in public, not just private theory.",
   },
   future: {
     eyebrow: "The Future",
