@@ -38,6 +38,19 @@ The homepage should therefore lead visitors through:
 3. Why a new category is necessary
 4. `GEH` as the logical solution
 
+## Inevitability Rule
+
+The homepage should not ask visitors to believe `GEH`.
+
+It should help visitors recognize a recurring organizational reality so that `GEH` becomes the inevitable conclusion rather than the homepage's opinion.
+
+Every refinement should therefore:
+
+- reduce explanation
+- increase recognition
+
+The category succeeds when visitors feel they have discovered why `GEH` is necessary rather than being told it is important.
+
 ## Scope
 
 Included:
