@@ -170,7 +170,7 @@ export const content: ContentModel = {
       impactPillar: "Future Leaders",
       category: "Education",
       vision:
-        "Develop future leaders through education, strategic thinking, research, and community engagement, with Gary Giam serving as Deputy President.",
+        "Develop future leaders through education, strategic thinking, research, and community engagement, with Gary Giam serving as Deputy Chairman.",
     },
     {
       id: "g-space",

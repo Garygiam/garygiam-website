@@ -66,6 +66,24 @@ export default function Home() {
                 {homepageNarrative.hero.secondaryCta.label}
               </TrackedLink>
             </div>
+            <div className="mt-8 rounded-[1.5rem] border border-black/10 bg-white p-5">
+              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#9a7a17]">
+                {homepageNarrative.hero.failureTitle}
+              </p>
+              <p className="mt-3 text-sm leading-7 text-zinc-700 sm:text-base">
+                {homepageNarrative.hero.failureLead}
+              </p>
+              <div className="mt-4 grid gap-3 sm:grid-cols-3">
+                {homepageNarrative.hero.realitySignals.map((signal) => (
+                  <article
+                    key={signal}
+                    className="rounded-[1.25rem] border border-black/10 bg-zinc-50 px-4 py-4"
+                  >
+                    <p className="text-sm leading-6 text-zinc-700">{signal}</p>
+                  </article>
+                ))}
+              </div>
+            </div>
           </div>
           <FounderPortrait
             available={portraitAvailable}
@@ -83,7 +101,12 @@ export default function Home() {
           <SectionHeading
             eyebrow={homepageNarrative.category.eyebrow}
             title={homepageNarrative.category.title}
-            description={<p>{homepageNarrative.category.description}</p>}
+            description={
+              <>
+                <p>{homepageNarrative.category.necessity}</p>
+                <p className="mt-4">{homepageNarrative.category.description}</p>
+              </>
+            }
           />
           <div className="mt-8 grid gap-4 lg:grid-cols-3">
             {homepageNarrative.category.mentalModel.map((item) => (
