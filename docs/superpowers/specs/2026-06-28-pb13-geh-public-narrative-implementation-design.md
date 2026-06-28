@@ -96,6 +96,16 @@ PB13 may not:
 - soften the problem-first structure into a generic founder website
 - replace `GEH` with a safer but weaker framing
 
+### Implementation Freeze Rule
+
+Once a tranche reaches CEO approval and verification, implementation must pause.
+
+The next tranche may not begin until:
+
+- Knowledge Harvest is completed
+- Promotion Review is completed
+- CEO approves continuation
+
 ## Shared Reusable Narrative Components
 
 PB13 should define a shared narrative component layer that multiple pages can reuse conceptually and later implement consistently.
