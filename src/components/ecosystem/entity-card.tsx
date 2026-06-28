@@ -5,11 +5,15 @@ import type { Venture } from "@/src/content";
 type EcosystemEntityCardProps = {
   entity: Venture;
   childrenEntities?: Venture[];
+  proofLabel?: string;
+  proofStatement?: string;
 };
 
 export function EcosystemEntityCard({
   entity,
   childrenEntities = [],
+  proofLabel,
+  proofStatement,
 }: EcosystemEntityCardProps) {
   return (
     <article className="rounded-[1.75rem] border border-black/10 bg-white p-6 sm:p-7">
@@ -33,6 +37,15 @@ export function EcosystemEntityCard({
       <p className="mt-4 text-sm leading-7 text-zinc-700 sm:text-base">
         {entity.vision}
       </p>
+
+      {proofStatement ? (
+        <div className="mt-5 rounded-[1.25rem] border border-black/10 bg-zinc-50 p-4">
+          <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-zinc-500">
+            {proofLabel ?? "What this proves"}
+          </p>
+          <p className="mt-2 text-sm leading-6 text-zinc-700">{proofStatement}</p>
+        </div>
+      ) : null}
 
       {childrenEntities.length > 0 ? (
         <div className="mt-5 flex flex-wrap gap-2">

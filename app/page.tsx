@@ -8,6 +8,7 @@ import { Container } from "@/src/components/ui/container";
 import {
   authorityMediaCoverage,
   content,
+  getHomepageProofSignals,
 } from "@/src/content";
 import { homepageNarrative } from "@/src/content/data/homepage";
 import {
@@ -26,6 +27,7 @@ const ecosystemCards = topLevelEcosystemEntities.map((entity) => ({
   children: getEcosystemChildren(content.ventures, entity.id),
 }));
 const featuredMediaCoverage = authorityMediaCoverage[0];
+const homepageProofSignals = getHomepageProofSignals();
 
 export default function Home() {
   return (
@@ -160,6 +162,10 @@ export default function Home() {
                 key={entity.id}
                 entity={entity}
                 childrenEntities={children}
+                proofLabel={homepageNarrative.proof.organizationalStrengtheningLabel}
+                proofStatement={
+                  homepageNarrative.proof.organizationProofByVentureId[entity.id]
+                }
               />
             ))}
           </div>
@@ -210,6 +216,30 @@ export default function Home() {
                 </Link>
               </div>
             ) : null}
+          </div>
+          <div className="mt-6 grid gap-4 lg:grid-cols-3">
+            {homepageProofSignals.map((signal) => (
+              <article
+                key={signal.id}
+                className="rounded-[1.5rem] border border-black/10 bg-zinc-50 p-5"
+              >
+                <p className="text-xs font-semibold uppercase tracking-[0.16em] text-zinc-500">
+                  Transformation Signal
+                </p>
+                <h3 className="mt-3 text-lg font-semibold tracking-tight text-zinc-950">
+                  {signal.title}
+                </h3>
+                <p className="mt-3 text-sm leading-7 text-zinc-700">
+                  {signal.organizationStrengthening}
+                </p>
+                <Link
+                  href={signal.sourceUrl}
+                  className="mt-5 inline-flex rounded-full border border-black/10 px-4 py-2 text-sm font-medium text-zinc-950"
+                >
+                  Source: {signal.sourceLabel}
+                </Link>
+              </article>
+            ))}
           </div>
         </section>
 

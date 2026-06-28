@@ -39,14 +39,16 @@ const HOMEPAGE_PROOF_SIGNAL_DETAILS: Record<
 export function getHomepageProofSignals(): HomepageProofSignal[] {
   return HOMEPAGE_PROOF_SIGNAL_IDS.map((id) => {
     if (id === "barn-farmer-mco-initiative") {
-      const mediaCoverage = authorityMediaCoverage.find((item) => item.id === id);
+      const mediaCoverage = authorityMediaCoverage.find(
+        (item) => item.relatedEntity === "Barn Farmer"
+      );
 
       if (!mediaCoverage) {
         throw new Error(`Missing homepage proof media coverage for ${id}`);
       }
 
       return {
-        id: mediaCoverage.id,
+        id,
         sourceLabel: mediaCoverage.sourceLabel,
         sourceUrl: mediaCoverage.sourceUrl,
         ...HOMEPAGE_PROOF_SIGNAL_DETAILS[id],
