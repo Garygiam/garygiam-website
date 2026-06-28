@@ -91,9 +91,21 @@ Visitors should first understand the recurring organizational problem that makes
 - Why do current approaches fail?
 - Why does this matter?
 
-### Strategic Problem Frame
+### Observable Pain
 
-The architecture should define the problem as organizational fragility:
+The architecture should begin with symptoms founders, operators, partners, and organization-builders already recognize:
+
+- promising ventures often remain fragile even after early traction
+- growth creates complexity faster than organizations build strength
+- execution depends too much on the founder, key individuals, or constant intervention
+- good ideas produce activity, but not always durable capability
+- organizations solve one problem, yet do not necessarily become stronger at solving the next one
+
+This makes the opening problem legible before the architecture names the deeper cause.
+
+### Root Cause
+
+The architecture should then define the underlying diagnosis as organizational fragility:
 
 - many ventures, organizations, and initiatives are built in isolated ways
 - growth often depends too heavily on individual effort, opportunistic execution, or one-off tactics
@@ -154,6 +166,18 @@ It is not merely:
 
 It is the public category name for a system designed to continuously create stronger organizations.
 
+### Why A New Category Is Required
+
+The category is required because the problem cannot be solved adequately with the language of:
+
+- company building alone
+- consulting alone
+- venture portfolios alone
+- branding alone
+- isolated founder capability alone
+
+Those frames describe parts of the work, but not the full logic of a system designed to make organizations stronger each time they solve a problem.
+
 ### Why The Category Needs To Exist
 
 The category must exist because the problem is systemic, not isolated.
@@ -199,6 +223,10 @@ The architecture should present `GEH` as a system that strengthens organizations
 - better decisions
 - more durable structure
 - ecosystem-level reinforcement across ventures and initiatives
+
+### Canonical Definition
+
+`GEH` is an entrepreneurial operating system: a repeatable system for building organizations that become stronger, more coherent, and more capable each time they solve a meaningful problem, rather than remaining isolated ventures dependent on one-off founder effort.
 
 ### Public Principle Layer
 
@@ -301,6 +329,23 @@ The architecture should frame the long-term vision as:
 - expanding from a founder-centered public site into the visible headquarters of an entrepreneurial operating system
 - showing how stronger organizations can be built repeatedly across different expressions
 - allowing the ecosystem to become more coherent, credible, and compounding over time
+- moving toward a world in which organizations do not merely solve isolated problems, but become stronger every time they solve one
+
+### Long-Term Transformation
+
+The destination is not simply:
+
+- more ventures
+- more visibility
+- more founder activity
+
+The deeper destination is a world where:
+
+- organizations compound capability rather than resetting at every stage
+- problem-solving creates stronger institutions, teams, and systems
+- entrepreneurial effort produces durable organizational strength, not just short-term output
+
+Future public narrative should therefore treat `GEH` as an attempt to normalize organizational strengthening as the outcome of entrepreneurship, not only organizational creation.
 
 ### Participation Logic
 
@@ -328,6 +373,20 @@ If no, it should be:
 - reframed
 - deferred
 - or kept off the public site entirely
+
+## Deferred Roadmap Item
+
+### GEH Manifesto v1
+
+Purpose:
+
+- a future standalone document expressing the philosophy, beliefs, principles, and long-term vision of `GEH`
+
+Status:
+
+- intentionally deferred
+- outside the scope of Narrative Architecture v1
+- should remain deferred until the narrative has been validated through multiple GEH instances
 
 ## Architecture Outputs For Future Use
 
