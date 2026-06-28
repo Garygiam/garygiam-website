@@ -3,7 +3,7 @@ import { expect, test } from "vitest";
 
 import Page from "@/app/page";
 
-test("renders the PB13 homepage as the public headquarters of GEH", () => {
+test("renders the PB13.1 homepage so GEH feels like the logical conclusion", () => {
   render(<Page />);
 
   expect(screen.getByRole("heading", { level: 1, name: "Gary Giam" })).toBeDefined();
@@ -20,7 +20,12 @@ test("renders the PB13 homepage as the public headquarters of GEH", () => {
   ).toBeDefined();
   expect(
     screen.getByText(
-      "GEH exists to solve a recurring organizational problem: promising ventures often build momentum without building the systems, coherence, and strength required to compound over time."
+      "Organizations often gain momentum faster than they gain strength. Growth creates complexity, dependence, and fragility faster than most systems are built to absorb it."
+    )
+  ).toBeDefined();
+  expect(
+    screen.getByText(
+      "Most company-building approaches optimize for launch, growth, or visibility. Far fewer are designed to make the organization itself stronger each time it solves a meaningful problem."
     )
   ).toBeDefined();
 
@@ -32,7 +37,12 @@ test("renders the PB13 homepage as the public headquarters of GEH", () => {
   ).toBeDefined();
   expect(
     screen.getByText(
-      "It is the category for a repeatable system designed to help organizations become stronger, more coherent, and more capable every time they solve a meaningful problem."
+      "If the real problem is organizational fragility, another founder profile, company list, or consulting label is not enough. A new category is required."
+    )
+  ).toBeDefined();
+  expect(
+    screen.getByText(
+      "GEH is that category: a repeatable system designed to help organizations become stronger, more coherent, and more capable every time they solve a meaningful problem."
     )
   ).toBeDefined();
 
@@ -51,12 +61,34 @@ test("renders the PB13 homepage as the public headquarters of GEH", () => {
   expect(
     screen.getByRole("heading", {
       level: 2,
-      name: "The ventures exist to validate the system",
+      name: "What the ventures prove about GEH",
     })
   ).toBeDefined();
-  expect(screen.getAllByText("Inkco").length).toBeGreaterThan(0);
-  expect(screen.getByText("HMIOSS")).toBeDefined();
-  expect(screen.getByText("The Star")).toBeDefined();
+  expect(
+    screen.getByText(
+      "The ventures matter because each one tests whether a stronger operating system can create stronger capability, clearer decisions, and more durable outcomes in a different context."
+    )
+  ).toBeDefined();
+  expect(
+    screen.getByText(
+      "Proves that stronger positioning and sharper systems improve business capability, not just campaign output."
+    )
+  ).toBeDefined();
+  expect(
+    screen.getByText(
+      "Proves that leadership development becomes stronger when education, strategy, and community are organized institutionally."
+    )
+  ).toBeDefined();
+  expect(
+    screen.getByText(
+      "Food Ink Malaysia turned early platform traction into recognized community capability"
+    )
+  ).toBeDefined();
+  expect(
+    screen.getByText(
+      "Barn Farmer converted restaurant disruption into community-support delivery under MCO"
+    )
+  ).toBeDefined();
 
   expect(
     screen.getByRole("heading", {
@@ -65,20 +97,6 @@ test("renders the PB13 homepage as the public headquarters of GEH", () => {
     })
   ).toBeDefined();
   expect(
-    screen.getByRole("link", { name: "Explore the GEH Ecosystem" }).getAttribute("href")
-  ).toBe("/companies");
-  expect(
-    screen.getByRole("link", { name: "View Proof & Authority" }).getAttribute("href")
-  ).toBe("/media");
-  expect(
     screen.getByRole("link", { name: "Partner with GEH" }).getAttribute("href")
   ).toBe("/contact");
-
-  expect(
-    screen.queryByRole("heading", {
-      level: 2,
-      name: "Building Across Industries. Driven By One Mission.",
-    })
-  ).toBeNull();
-  expect(screen.queryByRole("heading", { level: 2, name: "Why I Build" })).toBeNull();
 });

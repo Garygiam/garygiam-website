@@ -82,7 +82,7 @@ describe("MVP content contract", () => {
       ecosystemLayer: "Leadership Development",
       impactPillar: "Future Leaders",
       summary: "Strategic leadership and education institution.",
-      vision: expect.stringContaining("Deputy President"),
+      vision: expect.stringContaining("Deputy Chairman"),
       status: "Strategic Initiative",
     });
 
