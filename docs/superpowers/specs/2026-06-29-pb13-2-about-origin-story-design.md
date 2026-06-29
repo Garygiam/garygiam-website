@@ -74,19 +74,23 @@ The `About` page should answer:
 - why the recurring organizational problem kept mattering
 - how Gary encountered the same pattern in multiple contexts
 - what organizational truths each chapter revealed
+- why existing models were not enough on their own
 - why those truths made `GEH` necessary
 - why the mission now continues beyond biography
 
 ## Constitutional Rule
 
-Every chapter in the journey must answer two questions:
+Every chapter in the journey must answer three questions:
 
 1. What happened?
 2. What organizational principle emerged?
+3. Why wasn't that lesson enough on its own?
 
 If a milestone answers only Question 1, it remains biography.
 
-If it answers both, it becomes part of the origin story of `GEH`.
+If it answers Questions 1 and 2 but not Question 3, it remains an isolated lesson rather than a chain of inevitability.
+
+If it answers all three, it becomes part of the origin story of `GEH`.
 
 ## Section Logic
 
@@ -138,6 +142,7 @@ Each chapter should answer:
 
 - what happened
 - what organizational principle emerged
+- why that lesson was not enough on its own, and why it naturally led to the next one
 
 Illustrative chapter mapping:
 
@@ -151,6 +156,30 @@ Illustrative chapter mapping:
 Required narrative outcome:
 
 - visitors should begin to see that the journey was revealing one thesis in multiple forms
+
+### Section 3.5 — Why Existing Models Were Not Enough
+
+Purpose:
+
+- answer not only how Gary discovered `GEH`, but why `GEH` did not already exist as an adequate public model
+- position `GEH` as a new layer rather than a hostile replacement for existing approaches
+
+Required logic:
+
+- existing models were not wrong
+- they were optimized for different problems
+- consulting improves businesses
+- incubators launch startups
+- branding builds perception
+- accelerators increase growth
+- charities create impact
+- education develops people
+- very few models continuously strengthen organizations across all of those contexts
+
+Required narrative outcome:
+
+- visitors should understand that `GEH` emerged because the recurring problem sits above those individual models
+- `GEH` should feel like a necessary integrative layer, not an argument that prior models had no value
 
 ### Section 4 — The Inevitable Conclusion
 
@@ -182,6 +211,9 @@ Required future logic:
 
 - `GEH` is not the destination
 - it is the beginning of a system that should make every future organization stronger than the last
+- every chapter of Gary's journey solved one problem
+- `GEH` exists so future organizations do not have to learn those lessons the hard way
+- accumulated learning should become a public asset rather than remain trapped inside one founder's experience
 
 Required narrative outcome:
 
@@ -205,6 +237,7 @@ But it must still reinforce:
 - the necessity of the category
 - Gary as architect of the operating system
 - journey chapters as proof of discovery
+- the insufficiency of prior isolated models to solve the full recurring problem
 - the future direction of the mission
 
 ## Design Consequences
@@ -218,6 +251,8 @@ The page should prioritize:
 - question-led progression
 - observation and pattern recognition
 - chapter-to-principle linkage
+- chapter-to-next-lesson inevitability
+- calm differentiation from existing models
 - inevitability of `GEH`
 - forward mission continuity
 
@@ -263,9 +298,10 @@ PB13.2 design is successful when:
 - the page begins with the problem-question rather than with biography
 - `GEH` remains the protagonist of the page
 - Gary's journey reads as evidence of discovery rather than a list of achievements
-- each major chapter answers both what happened and what organizational principle emerged
+- each major chapter answers what happened, what organizational principle emerged, and why that lesson naturally led to the next one
+- the page explains why existing models were not enough without positioning them as failures
 - the page makes `GEH` feel inevitable rather than merely interesting
-- the ending creates forward momentum into the rest of the site
+- the ending transforms accumulated founder learning into a public asset for future organizations
 - the page strengthens category understanding more than personal-profile understanding
 
 ## Non-Goals
