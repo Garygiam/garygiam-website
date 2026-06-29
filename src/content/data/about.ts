@@ -106,13 +106,13 @@ export const aboutOriginNarrative: AboutOriginNarrative = {
     eyebrow: "The Inevitable Conclusion",
     title: "Why GEH became inevitable",
     lead:
-      "GEH became necessary because no existing model continuously strengthened organizations across all of those contexts. The recurring problem sat above the individual models, so the answer also had to sit above them.",
+      "GEH became necessary because no existing model continuously strengthened organizations across all of those contexts.",
   },
   future: {
     eyebrow: "The Mission Continues",
     title: "The mission continues",
     lead:
-      "GEH exists so future organizations do not have to learn those lessons the hard way. What began as repeated experience now becomes a public system that can help future organizations become stronger than the last.",
+      "GEH exists so future organizations do not have to learn those lessons the hard way.",
     bridgeCta: {
       label: "See GEH in practice",
       href: "/companies",
