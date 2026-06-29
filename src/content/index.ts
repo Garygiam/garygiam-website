@@ -1,4 +1,5 @@
 export { content } from "./data/portfolio";
+export { aboutOriginNarrative } from "./data/about";
 export {
   AUTHORITY_VAULT_CATEGORIES,
   authorityAwards,
@@ -16,6 +17,11 @@ export type {
   HomepageProofSignal,
   VentureMilestone,
 } from "./authority";
+export type {
+  AboutModelGapItem,
+  AboutOriginChapter,
+  AboutOriginNarrative,
+} from "./types/about-origin";
 export type { Site } from "./types/site";
 export type { Person } from "./types/person";
 export type { Venture } from "./types/ventures";
