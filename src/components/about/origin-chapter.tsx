@@ -35,7 +35,7 @@ export function OriginChapter({ chapter }: OriginChapterProps) {
 
         <div className="rounded-[1.25rem] border border-black/10 bg-zinc-50 p-4">
           <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-zinc-500">
-            Why It Wasn't Enough
+                Why It Wasn&apos;t Enough
           </p>
           <p className="mt-2 text-sm leading-7 text-zinc-700 sm:text-base">
             {chapter.whyNotEnough}
